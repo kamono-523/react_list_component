@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import { ListForm } from './components/ListForm';
+
+/*
+Requirments:
+1. create a list input control for use in a form.
+2. component should accept following props: 
+  label, 
+  placeholder,
+  required: if true, validate list is not empty,
+  disabled: if true, prevent add/remove,
+  max: number of list items not to exceed
+
+3. should be able to re-order items
+4. create in a public github and send link 
+5. bonus: upload to heroku
+*/
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <ListForm 
+        label="Top 3 Priorities" 
+        placeholder="gonna see who's been" 
+        max={3}
+        // disabled={true}
+        required={true}
+      />
     </div>
   );
 }
